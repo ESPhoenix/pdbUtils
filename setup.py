@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(name='pdbUtils',
-      version='2024.0.0',
-      description='A small python module that can parse PDB files as pandas DataFrames.',
+      version='2024.0.1',
+      description='Parse PDB files as pandas DataFrames',
       url='https://github.com/ESPhoenix/pdbUtils',
       download_url='https://pypi.org/project/pdbUtils',
       author='Eugene Shrimpton-Phoenix',

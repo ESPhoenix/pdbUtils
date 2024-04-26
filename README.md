@@ -9,9 +9,9 @@ https://www.cgl.ucsf.edu/chimera/docs/UsersGuide/tutorials/pdbintro.html
 
 You can load a pdb file as a DataFrame by:
 ```python
-import pdbUtils
+from pdbUtils import pdbUtils
 
-myPdbFile = "/home/eugene/5xh3.pdb"
+myPdbFile = "/path/to/your/pdb.pdb"
 
 pdbDf = pdbUtils.pdb2df(myPdbFile)
 ```
@@ -36,7 +36,7 @@ print(pdbDf["ELEMENT"])         ## string element (eg. "O")
 
 When you want to write back to a PDB file:
 ```python
-outPdbFile = "home/eugene/5xh3_new.pdb"
+outPdbFile = "/path/to/your/pdb_new.pdb"
 pdbUtils.pdb2df(pdbDf, outPdbFile)
 ```
 
@@ -44,20 +44,13 @@ I have also added the function to read AutoDock PDBQT files in the same manner:
 ```python
 import pdbUtils
 
-myPdbqtFile = "/home/eugene/5xh3.pdbqt"
+myPdbqtFile = "/path/to/your/pdbqt.pdbqt"
 
 pdbDf = pdbUtils.pdbqt2df(myPdbFile)
 ```
 
 ## Installation
 
-1. Clone this repo
-
 ```bash
-git clone https://github.com/ESPhoenix/pdbUtils
+pip install pdbUtils
 ```
-
-2. Install Pandas (unless you already have it!)
-``` bash
-pip install pandas
-``` 
