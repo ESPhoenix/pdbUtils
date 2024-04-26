@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdbUtils"
+version = "2024.0.0"
+dependencies = [
+    "pandas"
+]
+description = "A small python module that can parse PDB files as pandas DataFrames."
+authors = [
+    {name = "Eugene Shrimpton-Phoenix", email = "eshrimpt@ed.ac.uk"}
+]
+maintainers = [
+    {name = "Marta Chronowska", email = "mchrnwsk@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "GPLv3"}
+
+[project.urls]
+Source = "https://github.com/ESPhoenix/pdbUtils"
