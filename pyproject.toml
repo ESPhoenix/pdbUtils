@@ -8,7 +8,7 @@ version = "2024.0.1"
 dependencies = [
     "pandas"
 ]
-description = "A small python module that can parse PDB files as pandas DataFrames."
+description = "A small python module that can parse PDB files as pandas DataFrames"
 authors = [
     {name = "Eugene Shrimpton-Phoenix", email = "eshrimpt@ed.ac.uk"}
 ]
