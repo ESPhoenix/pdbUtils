@@ -37,7 +37,7 @@ print(pdbDf["ELEMENT"])         ## string element (eg. "O")
 When you want to write back to a PDB file:
 ```python
 outPdbFile = "/path/to/your/pdb_new.pdb"
-pdbUtils.pdb2df(pdbDf, outPdbFile)
+pdbUtils.df2pdb(pdbDf, outPdbFile)
 ```
 
 I have also added the function to read AutoDock PDBQT files in the same manner:
