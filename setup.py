@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='pdbUtils',
-      version='2024.0.1',
+      version='2024.0.2',
       description='Parse PDB files as pandas DataFrames',
       url='https://github.com/ESPhoenix/pdbUtils',
       download_url='https://pypi.org/project/pdbUtils',

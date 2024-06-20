@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: pdbUtils
+Version: 2024.0.2
+Summary: A small python module that can parse PDB files as pandas DataFrames
+Home-page: https://github.com/ESPhoenix/pdbUtils
+Download-URL: https://pypi.org/project/pdbUtils
+Author: Eugene Shrimpton-Phoenix
+Author-email: Eugene Shrimpton-Phoenix <eshrimpt@ed.ac.uk>
+Maintainer: Marta Chronowska
+Maintainer-email: Marta Chronowska <mchrnwsk@gmail.com>
+License: GPLv3
+Project-URL: Source, https://github.com/ESPhoenix/pdbUtils
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+
+# pdbUtils
+
+## Usage
+This is a small python module that can parse PDB files as pandas DataFrames. 
+
+PDB formatting can be all over the place depending on how they have been created. 
+PdbUtils has been written such that it tolerates all sorts of weird stuff when reading a PDB file, but writes PDB files strictly according to PDB formatting rules:
+https://www.cgl.ucsf.edu/chimera/docs/UsersGuide/tutorials/pdbintro.html
+
+You can load a pdb file as a DataFrame by:
+```python
+from pdbUtils import pdbUtils
+
+myPdbFile = "/path/to/your/pdb.pdb"
+
+pdbDf = pdbUtils.pdb2df(myPdbFile)
+```
+Once loaded as a DataFrame, you can modiy and interrogate it to your heart's content. 
+You can access each column of your new DataFrame using the following column names:
+```python
+print(pdbDf["ATOM"])            ## string "ATOM" or "HETATM"
+print(pdbDf["ATOM_ID"])         ## int atom number 
+print(pdbDf["ATOM_NAME"])       ## string atom name (eg. "OG")
+print(pdbDf["RES_NAME"])        ## string residue name (eg. "SER")
+print(pdbDf["CHAIN_ID"])        ## chain identifier (eg. "B")
+print(pdbDf["RES_ID"])          ## string residue number (eg. "131")
+print(pdbDf["X"])               ## float X coordinate
+print(pdbDf["Y"])               ## float Y coordinate
+print(pdbDf["Z"])               ## float Z coordinate
+print(pdbDf["OCCUPANCY"])       ## float occupancy (usually 1.00 or 0.00)
+print(pdbDf["BETAFACTOR"])      ## float betafactor or pLDDT if it's a structural prediction
+print(pdbDf["ELEMENT"])         ## string element (eg. "O")
+```
+
+
+
+When you want to write back to a PDB file:
+```python
+outPdbFile = "/path/to/your/pdb_new.pdb"
+pdbUtils.pdb2df(pdbDf, outPdbFile)
+```
+
+I have also added the function to read AutoDock PDBQT files in the same manner:
+```python
+import pdbUtils
+
+myPdbqtFile = "/path/to/your/pdbqt.pdbqt"
+
+pdbDf = pdbUtils.pdbqt2df(myPdbFile)
+```
+
+## Installation
+
+```bash
+pip install pdbUtils
+```
